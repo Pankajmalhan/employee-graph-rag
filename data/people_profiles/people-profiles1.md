@@ -22,18 +22,4 @@ Full Name: Michael Clark
 Skills: Data Engineering, Data Warehousing, AWS, Python
 Projects: AlphaCorp AWS-Powered Supply Chain Optimization Platform
 
-Full Name: Jessica White
-Skills: Data Privacy, Security Compliance, Azure Key Vault, Healthcare Regulations
-Projects: BetaHealth Secure Healthcare Data Analytics Platform on Azure
-
-Full Name: Daniel Brown
-Skills: Cloud Architecture, DevOps, AWS Lambda, Azure Functions
-Projects: GammaTech Smart Logistics Platform on Azure
-
-Full Name: Olivia Martinez
-Skills: Real-time Monitoring, Azure Monitoring, Data Analytics
-Projects: AlphaCorp AWS-Powered Supply Chain Optimization Platform
-
-Full Name: William Lee
-Skills: Predictive Modeling, Machine Learning, AWS SageMaker, Azure Machine Learning
-Projects: BetaHealth Secure Healthcare Data Analytics Platform on Azure
+Full Namea

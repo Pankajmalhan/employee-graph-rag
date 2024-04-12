@@ -48,7 +48,7 @@ def extract_entities_relationships(folder, prompt_template):
         try:
             with open(file, "r") as f:
                 text = f.read().rstrip()
-                prompt = PromptTemplate.from_template(prompt_template).invoke({"ctext":text}).to_string()
+                prompt = PromptTemplate.from_template(prompt_template).format(ctext=text)
                 result = process_gpt(prompt, system_msg=system_msg)
                 results.append(json.loads(result))
         except Exception as e:

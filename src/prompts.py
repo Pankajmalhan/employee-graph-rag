@@ -16,37 +16,39 @@ From the Project Brief below, extract the following Entities & relationships des
 
 
 3. The output should look like :
-{
-    "entities": [{"label":"Project","id":string,"name":string,"summary":string}],
+{{
+    "entities": [{{"label":"Project","id":string,"name":string,"summary":string}}],
     "relationships": ["projectid|USES_TECH|technologyid"]
-}
+}}
 
 Case Sheet:
 {ctext}
 """
 
-
 # Prompt for processing peoples' profiles
 people_prompt_template = """From the list of people below, extract the following Entities & relationships described in the mentioned format 
 0. ALWAYS FINISH THE OUTPUT. Never send partial responses
 1. First, look for these Entity types in the text and generate as comma-separated format similar to entity type.
-   `id` property of each entity must be alphanumeric and must be unique among the entities. You will be referring this property to define the relationship between entities. Do not create new entity types that aren't mentioned below. You will have to generate as many entities as needed as per the types below:
+   `id` property of each entity must be alphanumeric and must be unique among the entities. You will be referring this property to define the
+     relationship between entities. Do not create new entity types that aren't mentioned below. You will have to generate as many entities as needed as per the types below:
     Entity Types:
     label:'Person',id:string,name:string //Person that the data is about. `id` property is the name of the person, in camel-case. 'name' is the person's name, as spelled in the text.
     label:'Project',id:string,name:string;summary:string //Project mentioned in the profile; `id` property is the full lowercase name of the project, with no capital letters, special characters, spaces or hyphens.
     label:'Technology',id:string,name:string //Technology Entity, as listed in the "skills"-section of every person; `id` property is the name of the technology, in camel-case.
     
-3. Next generate each relationships as triples of head, relationship and tail. To refer the head and tail entity, use their respective `id` property. Relationship property should be mentioned within brackets as comma-separated. They should follow these relationship types below. You will have to generate as many relationships as needed as defined below:
+3. Next generate each relationships as triples of head, relationship and tail. To refer the head and tail entity, 
+    use their respective `id` property. Relationship property should be mentioned within brackets as comma-separated. 
+    They should follow these relationship types below. You will have to generate as many relationships as needed as defined below:
     Relationship types:
     person|HAS_SKILLS|technology 
     project|HAS_PEOPLE|person
 
 
-The output should look like :
-{
-    "entities": [{"label":"Person","id":string,"name":string}],
+The output should look like:
+{{
+    "entities": [{{"label":"Person","id":string,"name":string}}],
     "relationships": ["projectid|HAS_PEOPLE|personid"]
-}
+}}
 
 Case Sheet:
 {ctext}
@@ -68,11 +70,11 @@ From the list of messages below, extract the following Entities & relationships 
     Relationship types:
     personid|SENT|slackmessageid
 
-The output should look like :
-{
-    "entities": [{"label":"SlackMessage","id":string,"text":string}],
+The output should look like:
+{{
+    "entities": [{{"label":"SlackMessage","id":string,"text":string}}],
     "relationships": ["personid|SENT|messageid"]
-}
+}}
 
 Case Sheet:
 {ctext}
